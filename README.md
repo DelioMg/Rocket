@@ -13,20 +13,26 @@ Etapas :
 6. Lançar o Foguete.
 7. Comparar os Dados.
 
-#1. Motor.
+## 1. Motor.
 
 Por já ter conhecimento na produção do motor não foi preciso comprar, em que foi produzido KNSu e a carcaça do motor feita com cano de PVC de 3/4.
 
-#2. Teste Estatico 
+## 2. Teste Estatico 
 
 Para realização do Teste estatico foi utilizada uma celula de carga de 50Kg com Hz711 modificado para 80hz para melhor precisão das leituras obtendo os resultados Abaixo:
 
-#3.Avionica 
+## 3.Avionica 
 
-Para realizar a aferição da da altitude durante o voo foi produzido uma pcb no eagle com componetes que eu ja possuia sendo eles um ESP8266, BMP280, MPU6050, NRF24L01+, Socket Micro sd, Reguladores de Tensão, Bateria.
+Nesta etapa do projeto, foi desenvolvida uma PCB utilizando o software Eagle. A PCB tem como objetivo realizar a aferição da altitude durante o voo e envio dos dados para uma base remota. A placa utiliza componentes específicos para cada função, como o microcontrolador ESP8266 para cálculos, o sensor BMP280 para medição de altitude e temperatura, o sensor MPU6050 para medição de aceleração, o módulo NRF24L01+ para transmissão dos dados, um slot de Micro SD para funcionar como datalogger do voo, reguladores de tensão para ajustar a voltagem de 3,7V para 3,3V, um circuito para aferição da tensão da bateria, um circuito para acionar o paraquedas e um buzzer. Além disso, são utilizadas duas baterias de 3,7V para alimentação da placa.
 
-#4.Desenvolviemto do Minifoguete 
+## 4.Desenvolviemto do Minifoguete 
 
-Foi Utilizado o 3D https://www.thingiverse.com/thing:8754 em que foi modificado acoplamento do motor para comportar outros tamanhos de motores e utilizado o programa openrocket para ajaustar estabilidade do MiniFoguete.
+Nesta etapa do projeto, foi utilizado o modelo de foguete 3D Modular Model Rocket disponível no Thingiverse, que pode ser encontrado no seguinte link: [3D Modular Model Rocket](https://www.thingiverse.com/thing:8754).
 
-#5.Calculos
+<p align="center"><img src="Imagens/Externo.png" width="600px" /></p>
+<p align="center"><img src="Imagens/Interno.png" width="600px" /></p>
+
+Esse modelo de foguete foi modificado para permitir o acoplamento de diferentes tamanhos de motores. Além disso, o programa OpenRocket foi utilizado para ajustar a estabilidade do MiniFoguete.
+
+
+## 5.Calculos
