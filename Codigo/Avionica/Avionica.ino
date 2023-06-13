@@ -67,7 +67,7 @@ struct PacketData {
 File myFile;
 PacketData data;
 
-RF24 radio(D4, D8); //CE-CSN
+RF24 radio(12, 2); //CE-CSN
 
 //====================================================================================
 
@@ -80,14 +80,14 @@ void sdini() {
   // verifica se o cartão SD está presente e se pode ser inicializado
 
   
-  if (!SD.begin(D0)) { // ESP8266 GPIO16 D0
+  if (!SD.begin(5)) { // ESP8266 GPIO16 D0
     // programa encerrado 
     Serial.println("Falha, verifique se o cartão está presente.");
     return;                                                      
   }
 
   // Cria arquivo data.txt e abre
-  myFile = SD.open("data.txt", FILE_WRITE);                        
+  myFile = SD.open("/data.txt", FILE_APPEND);                        
   // Escreve dados no arquivo
   if (myFile) {
     Serial.print("Gravando...");
@@ -106,7 +106,7 @@ void sdini() {
 //------------------------------------------------------------------------------------
 
 void writeOnSD(String str) {
-  myFile = SD.open("data.txt", FILE_WRITE);
+  myFile = SD.open("/data.txt", FILE_APPEND);
 
   if (myFile) {
     Serial.println("(OK)");
@@ -159,10 +159,10 @@ void setup() {
   //Configura o MPU6050
   /* Default settings from datasheet. */
   bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,     /* Operating Mode. */
-                  Adafruit_BMP280::SAMPLING_X2,     /* Temp. oversampling */
-                  Adafruit_BMP280::SAMPLING_X16,    /* Pressure oversampling */
+                  Adafruit_BMP280::SAMPLING_X4,     /* Temp. oversampling */
+                  Adafruit_BMP280::SAMPLING_X8,    /* Pressure oversampling */
                   Adafruit_BMP280::FILTER_X16,      /* Filtering. */
-                  Adafruit_BMP280::STANDBY_MS_500); /* Standby time. */
+                  Adafruit_BMP280::STANDBY_MS_63); /* Standby time. */
 
   mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
   switch (mpu.getAccelerometerRange()) {
@@ -231,6 +231,6 @@ void loop() {
   writeOnSD(dados); //Grava no cartão sd
   Serial.println(dados); //printa os Dados
   radio.write(&data, sizeof(PacketData)); //transmite o pacote  
-  delay(70);  
+  delay(50);  
 }
 
