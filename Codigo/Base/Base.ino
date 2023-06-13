@@ -15,7 +15,7 @@
 
 const uint64_t pipeIn =  0xE8E8F0F0E1LL;
 
-RF24 radio(D4, D8); //CE-CSN
+RF24 radio(D4, D3); //CE-CSN
 
 
 // O tamanho deste pacote não deve exceder 32 bytes
