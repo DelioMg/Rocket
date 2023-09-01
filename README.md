@@ -19,7 +19,7 @@ Por já ter conhecimento na produção do motor não foi preciso comprar, em que
 
 ## 2. Teste Estatico 
 
-Para realização do Teste estatico foi utilizada uma celula de carga de 50Kg com Hz711 modificado para 80hz para melhor precisão das leituras obtendo os resultados Abaixo:
+Para realização do Teste estatico foi utilizada uma celula de carga de 10Kg com Hz711 modificado para 80hz para melhor precisão das leituras obtendo os resultados Abaixo:
 
 ## 3.Avionica 
 
